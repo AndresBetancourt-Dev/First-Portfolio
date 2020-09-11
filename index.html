@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Andres Betancourt"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="icon" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto&display=swap" rel="stylesheet">
+    <title>Andres Betancourt</title>
+
+
+    <style>
+       
+            body{
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+
+    .header{
+        width: 100%;
+    }
+    .hr-line{
+        color: white;
+    }
+    .navigation{
+        width: 100%;
+        height: 100%;
+        background-color:#161616;
+        display: flex;
+    }
+    .navigation-secondaryDiv{
+        width: 100%;
+        background-color:#161616;
+        align-items: center;
+        justify-content: center
+    }
+
+    .navigation-nav{
+        padding-top: 10%;
+    }
+
+    .navigation-unorganizedList{
+        width: 100%;
+        /* padding-top:30%; */
+        padding-left: 0px;
+    }
+    .navigation-listElement{
+        display: inline;
+        padding-right: 75px;
+        padding-left: 25px;
+    }
+   
+    .navigation-logo{
+        width: 100%;
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+    .navigation-listElement > .link{
+        color: white;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .hero-div{
+        background-color: #161616;
+        display: flex;
+        margin-top: 5px;
+        align-items: center;
+    }
+
+    .hero-title{
+        width: 50%;
+        font-size: 48px;
+    }
+    .hero-photo{
+        width: 50%;
+        
+    }
+    .hero-image{
+        width: 100%;
+    }
+
+    .hero-mainTitle{
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        padding-left: 20px;
+    }
+
+    .hero-mainTitle > span {
+        color: #da1f26;
+    }
+
+    .portfolio{
+        background-color: #161616;
+        width: 100%;
+        
+    }
+
+    .portfolio-title{
+        padding-top: 20px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .portfolio-container{
+        width: 100%;
+        display: block;
+        /* flex-direction: column;
+        flex-wrap: wrap; */
+        overflow: hidden;
+    }
+
+    .portfolio-container .portfolio-box {
+        position: relative;
+        width: 100%;
+        max-height: 500px;
+        background: #161616;
+        box-sizing: border-box;
+        display: inline-block;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .portfolio-container .portfolio-box .portfolio-imgBox{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .portfolio-container .portfolio-box .portfolio-imgBox img{
+        max-width: 100%;
+        min-height: 150px;
+        /* max-height: 100%; */
+        transition: transform 2s;
+        object-fit: contain;
+    }
+
+    .portfolio-container .portfolio-box:hover .portfolio-imgBox img
+    {
+        transform: scale(1.2);
+        
+    }
+
+    .portfolio-container .portfolio-box .portfolio-details{
+        position: absolute;
+        width: 100%;
+        top: 10px;
+        left: 10;
+        bottom: 10px;
+        align-content: center;
+        background: rgba(0,0,0,.8);
+        transform: scaleY(0);
+        transition: transform .5s;
+    }
+    .portfolio-container .portfolio-box:hover .portfolio-details{
+        transform: scaleY(1);
+    }
+
+    .portfolio-container .portfolio-box .portfolio-details .portfolio-content{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        padding: 15px;
+        color: #fff;
+    }
+
+    .portfolio-container .portfolio-box .portfolio-details .portfolio-content h2{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 50px;
+        color: #fff;
+        font-family: 'Nunito Sans',sans-serif;
+    }
+
+    .experiencia{
+        margin: 0px 15px;
+    }
+
+    .experience-titleContainer{
+        width: 100%;
+    }
+
+    .experience-title{
+        text-align: center;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .experience-container{
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .experience-div{
+        width: 16.6%;
+        padding: 5px;
+    }
+    .experience-image{
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .footer{
+        background-color:#da1f26;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-enterprise{
+        display: flex;
+    }
+    .footer-paragraph{
+        color: #161616;
+        font-family: 'Nunito Sans',sans-serif;
+        align-self: center;
+        font-weight: bold;
+        padding-left: 15px;
+    }
+    .footer-copyright{
+        width: 20px;
+        vertical-align: middle;
+    }
+    .footer-author{
+        color: #161616;
+        font-family: 'Nunito Sans',sans-serif;
+        align-self: center;
+        font-weight: bold;
+        padding-right: 15px;
+    }
+        
+        
+
+    @media screen and (max-width:950px){
+        .hero-title{
+        font-size: 40px;
+    }
+    }
+
+
+    @media screen and (max-width:850px){
+        .hero-title{
+        font-size: 35px;
+    }
+    }
+
+    @media screen and (max-width:750px){
+        .hero-title{
+        font-size: 30px;
+    }
+    .portfolio-articles{
+       height: 250px;
+    }
+    }
+
+    @media screen and (max-width:650px){
+        .navigation-listElement > .link{
+        color: white;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .hero-title{
+        font-size: 25px;
+    }
+
+    .portfolio-articles{
+       height: 200px;
+    }
+
+    }
+
+     @media screen and (max-width: 450px){
+        img.navigation-logo{
+            width: 120px;
+            padding: 0px;
+        }
+        .hero-title{
+        font-size: 20px;
+    }
+        .footer-paragraph{
+            font-size: 12px;
+        }
+        
+        .footer-author{
+            font-size: 12px;
+        }
+
+        .navigation-listElement > .link{
+            line-height: 150%;
+        }
+
+        .navigation-listElement > .link{
+            font-size: 16px;
+        }
+
+        
+
+    } 
+
+    @media screen and (max-width: 400px){
+        .hero-title{
+        font-size: 15px;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+    }
+
+    @media screen and (max-width: 350px){
+        .hero-title{
+            font-size: 10px;
+        }
+
+        .footer-paragraph{
+            font-size: 9.5px;
+        }
+        
+        .footer-author{
+            font-size: 9.5px;
+        }
+
+
+    }
+    
+
+    
+        
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="navigation">
+              <figure class="navigation-mainLogo">
+                    <img class="navigation-logo" src="images/logo.png" alt="Logo">
+              </figure>
+
+              <div class="navigation-secondaryDiv">
+                    <nav class="navigation-nav">
+                            <ul class="navigation-unorganizedList">
+                                <li class="navigation-listElement"><a class="link" href="#portafolio">Portafolio</a></li>
+                                <li class="navigation-listElement"><a class="link" href="">Experiencia</a></li>
+                                <li class="navigation-listElement"><a class="link" href="">Trabajemos</a></li>
+                                <li class="navigation-listElement"><a class="link" href="">Contacto</a></li>
+                            </ul>
+                        </nav>
+              </div>
+        </div>
+    </header>
+
+
+    <section class="hero"> 
+        <div class="hero-div">
+
+            <div class="hero-title">
+                    <h1 class="hero-mainTitle">Andres <span>Betancourt</span> <br> Desarrollador <span>FullStack</span> </h1>
+            </div>
+            <div class="hero-photo">
+            <figure class="hero-figure">
+                    <img class="hero-image" src="images/me.jpg" alt="Imagen de Andres">
+            </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-line">
+
+    <section class="portfolio" id="portafolio">
+            <h2 class="portfolio-title">Portafolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <div class="portfolio-imgBox">
+                    <img src="images/computer.jpg" alt="">
+                </div>
+                <div class="portfolio-details">
+                    <div class="portfolio-content">
+                        <h2>Career</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                    <div class="portfolio-imgBox">
+                            <img src="images/hobbies.jpg" alt="">
+                        </div>
+                        <div class="portfolio-details">
+                            <div class="portfolio-content">
+                                <h2>Hobbies</h2>
+                            </div>
+                        </div>
+           </div>
+            <div class="portfolio-box">
+                    <div class="portfolio-imgBox">
+                            <img src="images/projects.jpeg" alt="">
+                        </div>
+                        <div class="portfolio-details">
+                            <div class="portfolio-content">
+                                <h2>Projects</h2>
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="experiencia">
+            <div class="experience-titleContainer">
+                    <h2 class="experience-title">Experiencia</h2>
+                </div>
+        <div class="experience-container">
+            
+            <div class="experience-div">
+                <img class="experience-image" src="images/javascript.png" alt="">
+            </div>
+            <div class="experience-div">
+                <img class="experience-image" src="images/python.png" alt="">
+            </div>
+            <div class="experience-div">
+                <img class="experience-image" src="images/react.png" alt="">
+            </div>
+            <div class="experience-div">
+                <img class="experience-image" src="images/angular.png" alt="">
+            </div>
+            <div class="experience-div">
+                <img class="experience-image" src="images/node.png" alt="">
+            </div>
+            <div class="experience-div">
+                <img class="experience-image" src="images/firebase.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="trabajemos">
+
+
+
+
+
+    </section>
+
+
+
+    <footer class="footer" id="contacto">
+
+        <div class="footer-enterprise">
+            <p class="footer-paragraph"> <img class="footer-copyright" src="images/copyright.png" alt=""> Court Beta Laboratories  </p>
+
+        </div>
+        <div>
+            <p class="footer-author"> Andres David Betancourt</p>
+
+        </div>
+    </footer>
+    
+</body>
+</html>
